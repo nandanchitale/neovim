@@ -5,6 +5,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+
 -- LazyVim auto format
 vim.g.autoformat = true
 
@@ -125,3 +129,6 @@ end
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- Default terminal to pwsh
+vim.opt.shell = "cmd.exe"

@@ -35,14 +35,6 @@ return {
     end)
   end,
   opts = function()
-    local plugin = require("lazy.core.config").plugins["conform.nvim"]
-    if plugin.config ~= M.setup then
-      LazyVim.error({
-        "Don't set `plugin.config` for `conform.nvim`.\n",
-        "This will break **LazyVim** formatting.\n",
-        "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
-      }, { title = "LazyVim" })
-    end
     ---@class ConformOpts
     local opts = {
       -- LazyVim will use these options when formatting with the conform.nvim formatter
@@ -63,20 +55,8 @@ return {
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = { options = { ignore_errors = true } },
-        -- # Example of using dprint only when a dprint.json file is present
-        -- dprint = {
-        --   condition = function(ctx)
-        --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-        --   end,
-        -- },
-        --
-        -- # Example of using shfmt with extra args
-        -- shfmt = {
-        --   prepend_args = { "-i", "2", "-ci" },
-        -- },
       },
     }
     return opts
   end,
-  --config = M.setup,
 }
