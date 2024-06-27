@@ -2,12 +2,17 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 -- This file is automatically loaded by plugins.core
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+vim.opt.lcs = "trail:·", "tab:»·"
+
+-- set lcs=tab:>-,trail:·,nbsp:·,extends:>,precedes:<
 
 -- LazyVim auto format
 vim.g.autoformat = true
@@ -116,6 +121,8 @@ opt.virtualedit = "block" -- Allow cursor to move where there is no text in visu
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
+
+vim.opt.undofile = false
 
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
